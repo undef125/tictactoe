@@ -40,22 +40,23 @@ const TikBox = () => {
             setCurrentPlayer(player1);
         }
         if (playerOneClick.length >= 3 || playerTwoClick.length >= 3) {
+            console.log(playerTwoClick)
             findWinner();
         }
     };
 
     const findWinner = () => {
+        console.log("got: "+ playerTwoClick);
         let winningSequences = [
             [1, 2, 3],
             [4, 5, 6],
             [7, 8, 9],
             [1, 4, 7],
             [2, 5, 8],
-            [3, 6, 7],
+            [3, 6, 9],
             [1, 5, 9],
             [3, 5, 7],
         ];
-        if (currentPlayer === player1) {
             winningSequences.map((singleSeq) => {
                 let check1 = playerOneClick.includes(singleSeq[0]);
                 let check2 = playerOneClick.includes(singleSeq[1]);
@@ -65,7 +66,6 @@ const TikBox = () => {
                     setIsGameEnded(true);
                 }
             });
-        } else {
             winningSequences.map((singleSeq) => {
                 let check1 = playerTwoClick.includes(singleSeq[0]);
                 let check2 = playerTwoClick.includes(singleSeq[1]);
@@ -75,7 +75,6 @@ const TikBox = () => {
                     setIsGameEnded(true);
                 }
             });
-        }
         if (totalClicks >= 9) {
             setresult("It's a draw!!");
             setIsGameEnded(true);
