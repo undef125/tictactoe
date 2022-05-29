@@ -1,9 +1,10 @@
-.header{
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #2f3535;
-    color: rgb(182, 177, 177);   
+    color: rgb(182, 177, 177);
     height: 3rem;
 }
 
@@ -22,20 +23,56 @@
     user-select: none;
 }
 
-.boxTwo,.boxFiv,.boxEig{
+.boxTwo,
+.boxFiv,
+.boxEig {
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
-.boxFou,.boxFiv,.boxSix{
+.boxFou,
+.boxFiv,
+.boxSix {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+}
+.winner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: "Ubuntu", sans-serif;
+}
+.winner > p {
+    font-size: 2rem;
+}
+.winner > button {
+    height: 3rem;
+    width: 10rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    background-color: #4d4c7d;
+    outline: none;
+    border: 1px solid black;
+    color: whitesmoke;
+    border-radius: 10px;
+    color: #4d4c7d;
+    background-color: whitesmoke;
 }
 
 @media screen and (min-width: 600px) {
     .boxHolder {
         width: 35%;
     }
-    .boxHolder > div:hover{
+    .boxHolder > div:hover {
         background-color: #2f35358f;
+    }
+    .winner > button {
+        cursor: pointer;
+        transition: .3s ease-in-out;
+    }
+    .winner > button:hover {
+        background-color: #4d4c7d;
+        color: whitesmoke;
     }
 }
